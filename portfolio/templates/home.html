@@ -1,0 +1,57 @@
+{% extends 'layout.html' %} {% block content %} {% load static %}
+
+<header class="row bg-black">
+  <div class="col-md-4">
+    <img src="{% static 'portfolio/yo.jpeg' %}" alt="" />
+  </div>
+
+  <div class="col-md-8 my-auto">
+    <h1>I am <strong>Hernan</strong></h1>
+    <h3>I am Python Developer</h3>
+    <p>
+      Soy una persona proactiva, organizada y responsable, desde el 2021 me
+      empezó a interesar la programación, siempre estuve interesado en el mundo
+      tecnológico y comencé a estudiar programación por Udemy y Educacion IT. Me
+      considero autodidacta ya que suelo aprender, leer por mi cuenta, mas haya
+      de los lugares en que me capacite. Sigo desarrolandome y aprendiendo
+      nuevas tecnologías.
+    </p>
+    <a
+      href="{% static 'portfolio/cv.pdf' %}"
+      class="btn btn-primary btn-lg rounded-0 my-3"
+      >Download CV</a
+    >
+  </div>
+</header>
+
+<div class="row my-4 text-center">
+  <h3>My Proyects</h3>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, fuga.</p>
+  <!-- por proyect en la lista de proyecto (iteramos la lista) -->
+  {% for proyect in proyects %}
+
+  <div class="col-md-4 p-4">
+    <div class="card bg-black card-project">
+      <img
+        src="{{proyect.image.url}}"
+        alt="{{proyect.titulo}}"
+        class="card-img-top"
+      />
+      <div class="card-body">
+        <h2>{{proyect.titulo}}</h2>
+        <p>{{proyect.descripcion}}</p>
+
+        {% if proyect.url %}
+        <a
+          href="{{proyect.url}}"
+          class="btn btn-light rounded-0 btn-sm"
+          target="_blank"
+          >{{proyect.url}}</a
+        >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% endfor %} {% endblock %}
+</div>

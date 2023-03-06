@@ -1,0 +1,31 @@
+{% extends 'layout.html' %} {% block content %}
+
+<h1>Posts</h1>
+
+{% for post in posts %}
+
+<div class="p-3">
+  <div class="card card-body bg-black">
+    <div class="row">
+      <div class="col-3">
+        <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fluid" />
+      </div>
+
+      <div class="col-9">
+        <h2>{{post.title}}</h2>
+        <!-- trucatechars limita a solo 100 caracteres que aparezcan, striptags quita las etiquetas -->
+        <p>{{post.description|striptags|truncatechars:100}}</p>
+        <!-- le damos formato a la fecha para que empiece primero con el mes, dia y año -->
+        <p>{{post.date|date:'M d Y'|upper}}</p>
+
+        <a
+          href="{% url 'mi_blog:post_detail' post.id %}"
+          class="btn btn-primary"
+          >{{post.title}}</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endfor %} {% endblock %}

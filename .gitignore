@@ -1,0 +1,9 @@
+# Ingresamos todos los archivos/carpetas inecesaria para subir a github
+
+media
+
+**/__pycache__
+
+venv
+
+db.sqlite3
