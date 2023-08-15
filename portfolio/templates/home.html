@@ -2,11 +2,7 @@
 
 <header class="row bg-black">
   <div class="col-md-4">
-    <img
-      src="{% static 'portfolio/yo.jpeg' %}"
-      alt=""
-      class="img-fluid rounded"
-    />
+    <img src="{% static 'portfolio/yo.jpeg' %}" alt="" class="img-fluid rounded" />
   </div>
 
   <div class="col-md-8 my-auto">
@@ -20,42 +16,28 @@
       de los lugares en que me capacite. Sigo desarrolandome y aprendiendo
       nuevas tecnologías.
     </p>
-    <a
-      href="{% static 'portfolio/cv.pdf' %}"
-      class="btn btn-danger btn-lg rounded-0 my-3"
-      >Download CV</a
-    >
+    <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-danger btn-lg rounded-0 my-3">Download CV</a>
   </div>
 </header>
 
 <div class="row my-4 text-center">
-  <h3>My Proyects</h3>
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, fuga.</p>
-  <!-- por proyect en la lista de proyecto (iteramos la lista) -->
-  {% for proyect in proyects %}
+  <h3>Contact</h3>
+  <p>Here my contact.</p>
 
+  {% for proyect in proyects %}
   <div class="col-md-4 p-4">
     <div class="card bg-black card-project">
-      <img
-        src="{{proyect.image.url}}"
-        alt="{{proyect.titulo}}"
-        class="card-img-top"
-      />
+      <img src="{{proyect.image.url}}" alt="{{proyect.titulo}}" class="card-img-top" />
       <div class="card-body">
         <h2>{{proyect.titulo}}</h2>
         <p>{{proyect.descripcion}}</p>
 
         {% if proyect.url %}
-        <a
-          href="{{proyect.url}}"
-          class="btn btn-light rounded-0 btn-sm"
-          target="_blank"
-          >{{proyect.url}}</a
-        >
+        <a href="{{proyect.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{proyect.url}}</a>
         {% endif %}
       </div>
     </div>
   </div>
-
-  {% endfor %} {% endblock %}
+  {% endfor %}
+  {% endblock %}
 </div>
