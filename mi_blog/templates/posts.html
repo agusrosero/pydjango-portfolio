@@ -1,4 +1,5 @@
-{% extends 'layout.html' %} {% block content %}
+{% extends 'layout.html' %}
+{% block content %}
 
 <h1 class="display-3 text-center">Posts</h1>
 
@@ -18,12 +19,14 @@
         <!-- le damos formato a la fecha para que empiece primero con el mes, dia y año -->
         <p>{{post.date|date:'M d Y'|upper}}</p>
 
-        <a href="{% url 'mi_blog:post_detail' post.id %}" class="btn btn-danger"
-          >{{post.title}}</a
-        >
+        <a href="{% url 'mi_blog:post_detail' post.id %}" class="btn btn-primary">{{post.title}}</a>
+
+        <!-- !!!CONTINUAR AQUI BOTON ELIMINAR!!! -->
+        <a href="{% url 'delete_post' post.id %}" class="btn btn-danger">Eliminar</a>
       </div>
     </div>
   </div>
 </div>
 
-{% endfor %} {% endblock %}
+{% endfor %}
+{% endblock %}

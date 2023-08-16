@@ -1,4 +1,6 @@
-{% extends 'layout.html' %} {% block content %} {% load static %}
+{% extends 'layout.html' %}
+{% block content %}
+{% load static %}
 
 <header class="row bg-black">
   <div class="col-md-4">
@@ -6,8 +8,8 @@
   </div>
 
   <div class="col-md-8 my-auto">
-    <h1 class="display-5">I am <strong>Hernan</strong></h1>
-    <h3>I am Python Developer</h3>
+    <h1 class="display-5">Mi nombre es <strong>Hernan</strong></h1>
+    <h3>Soy Desarrollador Backend</h3>
     <p>
       Soy una persona proactiva, organizada y responsable, desde el 2021 me
       empezó a interesar la programación, siempre estuve interesado en el mundo
@@ -16,13 +18,13 @@
       de los lugares en que me capacite. Sigo desarrolandome y aprendiendo
       nuevas tecnologías.
     </p>
-    <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-danger btn-lg rounded-0 my-3">Download CV</a>
+    <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-danger btn-lg rounded-0 my-3">Descargar CV</a>
   </div>
 </header>
 
 <div class="row my-4 text-center">
-  <h3>Contact</h3>
-  <p>Here my contact.</p>
+  <h3>Contacto</h3>
+  <p>Para contactarme pueden ir aca.</p>
 
   {% for proyect in proyects %}
   <div class="col-md-4 p-4">
@@ -33,7 +35,7 @@
         <p>{{proyect.descripcion}}</p>
 
         {% if proyect.url %}
-        <a href="{{proyect.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{proyect.url}}</a>
+        <a href="{{proyect.url}}" class="btn btn-primary rounded-0 btn-sm" target="_blank">{{proyect.url}}</a>
         {% endif %}
       </div>
     </div>
