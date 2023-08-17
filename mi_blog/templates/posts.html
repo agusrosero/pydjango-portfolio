@@ -21,8 +21,10 @@
 
         <a href="{% url 'mi_blog:post_detail' post.id %}" class="btn btn-primary">{{post.title}}</a>
 
-        <!-- !!!CONTINUAR AQUI BOTON ELIMINAR!!! -->
-        <a href="{% url 'delete_post' post.id %}" class="btn btn-danger">Eliminar</a>
+        <!-- Eliminar Post -->
+        {% for p in posts %}
+        <a href="{% url 'mi_blog:delete_post' p.id %}" class="btn btn-danger">Eliminar</a>
+        {% endfor %}
       </div>
     </div>
   </div>

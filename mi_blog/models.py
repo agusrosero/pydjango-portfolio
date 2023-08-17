@@ -8,3 +8,7 @@ class Post(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to="mi_blog/images")
     date = models.DateField(datetime.date.today)
+
+    def __str__(self):
+        return self.title
+    
