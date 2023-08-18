@@ -1,9 +1,9 @@
 body {
-    background: #090909;
+  background: #090909;
 }
 
 .bg-black {
-    background: #000;
+  background: #000;
 }
 
 /* img {
@@ -12,6 +12,6 @@ body {
 } */
 
 .card-project:hover {
-    border: 1px solid #fff;
-    cursor: pointer;
+  border: 1px solid #fff;
+  cursor: pointer;
 }
