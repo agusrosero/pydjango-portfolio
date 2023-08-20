@@ -22,13 +22,13 @@ def sign_in(request):
             user = authenticate(request, username=username, password=password)
             if user:
                 login(request, user)
-                messages.success(request, 'You have successfully logged in')
+                messages.success(request, 'Has iniciado sesión correctamente')
                 return redirect('/')
         
-        messages.error(request, 'Invalid username or password')
+        messages.error(request, 'Usuario o contraseña incorrectos')
         return render(request, 'users/login.html', {'form': form})
 
 def sign_out(request):
     logout(request)
-    messages.success(request, 'You have successfully logged out')
+    messages.success(request, 'Has cerrado sesión correctamente')
     return redirect('login')

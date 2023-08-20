@@ -3,10 +3,12 @@
 {% block content %}
 
 <form novalidate method="post">
-    {% csrf_token %}
     <h2>Login</h2>
-    {{form.as_p}}
-    <input type="submit" value="Login">
+    <div class="form-outline mb-4">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Login">
+    </div>
 </form>
 
 {% endblock %}
