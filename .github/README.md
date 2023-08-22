@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ## Page:
 
-![home](https://user-images.githubusercontent.com/103611875/223207299-931d19c1-0786-414d-af78-ee2556c0e965.png)
+![home]()
 
 ![home2](https://user-images.githubusercontent.com/103611875/223207629-bd15a846-0675-4f6b-b5d2-5242aa02ffcf.png)
 
