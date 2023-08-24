@@ -20,6 +20,19 @@ Install requirements.
 pip install -r requirements.txt
 ```
 
+Migrations
+
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
+
+Run Server
+
+```
+python3 manage.py runserver
+```
+
 ## Page:
 
 ![home](./assets/Captura%20desde%202023-08-22%2009-01-04.png)
