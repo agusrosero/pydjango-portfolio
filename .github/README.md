@@ -27,7 +27,7 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
-Run Server
+## Run Server
 
 ```
 python3 manage.py runserver
