@@ -2,13 +2,21 @@
 
 {% block content %}
 
-<form novalidate method="post">
-    <h2>Login</h2>
-    <div class="form-outline mb-4">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Login">
-    </div>
-</form>
+<div class="container text-center">
+    <div class="display-3"><span>Login</span></div>
+    <form name="LoginForm" action="{% url 'login' %}" method="post">
+        <div class="form-group mb-3 py-4">
+
+            {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+            <input type="username" placeholder="Username" name="username" required class="form-control">
+            <br>
+            <input type="password" placeholder="Password" name="password" required class="form-control">
+            <br>
+            <input type="submit" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+
 
 {% endblock %}

@@ -20,12 +20,12 @@ def sign_in(request):
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             user = authenticate(request, username=username, password=password)
-            if user:
+            if user is not None:
                 login(request, user)
                 messages.success(request, 'Has iniciado sesión correctamente')
                 return redirect('/')
-        
-        messages.error(request, 'Usuario o contraseña incorrectos')
+            else:
+                messages.error(request, 'Usuario o contraseña incorrectos')
         return render(request, 'users/login.html', {'form': form})
 
 def sign_out(request):
