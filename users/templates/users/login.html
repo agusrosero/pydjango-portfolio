@@ -6,7 +6,6 @@
     <div class="display-3"><span>Login</span></div>
     <form name="LoginForm" action="{% url 'login' %}" method="post">
         <div class="form-group mb-3 py-4">
-
             {% csrf_token %}
             <!-- {{ form.as_p }} -->
             <input type="username" placeholder="Username" name="username" required class="form-control">
