@@ -49,8 +49,7 @@ python3 manage.py runserver
 
 - Python
 - Django
-- CSS
-- HTML
+- CSS/HTML
 - Bootstrap
 
 | [Twitter](https://twitter.com/hernagusdev) - Twitter | [Linkedin](https://www.linkedin.com/in/hernan-rosero/) - Linkedin |
