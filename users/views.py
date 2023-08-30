@@ -25,10 +25,10 @@ def sign_in(request):
                 messages.success(request, 'Has iniciado sesión correctamente')
                 return redirect('/')
             else:
-                messages.error(request, 'Usuario o contraseña incorrectos')
+                messages.warning(request, 'Usuario o contraseña incorrectos')
         return render(request, 'users/login.html', {'form': form})
 
 def sign_out(request):
     logout(request)
-    messages.success(request, 'Has cerrado sesión correctamente')
+    messages.info(request, 'Has cerrado sesión correctamente')
     return redirect('login')

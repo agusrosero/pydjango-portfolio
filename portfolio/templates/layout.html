@@ -19,14 +19,12 @@
 
   <!-- Mensaje de login -->
   {% if messages %}
-  <div class="container alert alert-message bg-danger mt-3">
-    <div class="messages">
-      {% for message in messages %}
-      <div class="aler {% if message.tags %}alert-{{ message.tags }} {% endif %}">
-        {{ message }}
-      </div>
-      {% endfor %}
+  <div class="messages">
+    {% for message in messages %}
+    <div class="alert {% if message.tags %} alert-{{ message.tags }} {% endif %}">
+      {{ message }}
     </div>
+    {% endfor %}
   </div>
   {% endif %}
 
