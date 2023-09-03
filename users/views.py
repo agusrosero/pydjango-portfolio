@@ -2,9 +2,29 @@ from django.shortcuts import render, redirect
 from .forms import LoginForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
+from .forms import SignUpForm
 
 
 # Create your views here.
+# Register
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()
+            user.save()
+            raw_password = form.cleaned_data.get('password1')
+
+            user = authenticate(username=user.username, password=raw_password)
+            login(request, user)
+
+            return redirect('/')
+    else:
+        form = SignUpForm()
+    return render(request, 'users/signup.html', {'form': form})
+
+# Login
 def sign_in(request):
     if request.method == 'GET':
         if request.user.is_authenticated:
@@ -28,6 +48,7 @@ def sign_in(request):
                 messages.warning(request, 'Usuario o contraseña incorrectos')
         return render(request, 'users/login.html', {'form': form})
 
+# Logout
 def sign_out(request):
     logout(request)
     messages.info(request, 'Has cerrado sesión correctamente')

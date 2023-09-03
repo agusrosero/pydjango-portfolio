@@ -19,8 +19,8 @@
         <!-- le damos formato a la fecha para que empiece primero con el mes, dia y año -->
         <p>{{post.date|date:'M d Y'|upper}}</p>
 
-        <a href="{% url 'mi_blog:post_detail' post.id %}" class="btn btn-primary">Detalles</a>
-        <a href="{% url 'mi_blog:delete_post' post.id %}" class="btn btn-danger">Eliminar</a>
+        <a href="{% url 'mi_blog:post_detail' post.id %}" class="btn btn-primary">Detail</a>
+        <a href="{% url 'mi_blog:delete_post' post.id %}" class="btn btn-danger">Delete</a>
       </div>
     </div>
   </div>
