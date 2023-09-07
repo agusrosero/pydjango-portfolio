@@ -2,38 +2,46 @@
 
 # Execute
 
-Create enviorment.
+### Create enviorment
 
 ```
 python3 -m venv venv
 ```
 
-Active enviorment.
+### Active enviorment
+
+To active our venv on Windows:
+
+```
+.\venv\Scripts\activate
+```
+
+On Linux:
 
 ```
 source venv/bin/activate
 ```
 
-Install requirements.
+### Install requirements
 
 ```
 pip install -r requirements.txt
 ```
 
-Migrations
+### Migrations
 
 ```
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
-Create superuser
+### Create superuser
 
 ```
 python3 manage.py createsuperuser
 ```
 
-## Run Server
+### Run Server
 
 ```
 python3 manage.py runserver
@@ -45,11 +53,11 @@ python3 manage.py runserver
 
 ![home2](https://user-images.githubusercontent.com/103611875/223207629-bd15a846-0675-4f6b-b5d2-5242aa02ffcf.png)
 
-# ✅ Used technology
+## ✅ Used technology
 
 - Python
-- Django
+    - Django
 - CSS/HTML
-- Bootstrap
+    - Bootstrap
 
 | [Twitter](https://twitter.com/hernagusdev) - Twitter | [Linkedin](https://www.linkedin.com/in/hernan-rosero/) - Linkedin |
