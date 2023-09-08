@@ -60,7 +60,7 @@ ROOT_URLCONF = "django_portfolio.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ['templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -125,7 +125,6 @@ STATIC_URL = "static/"
 
 # Media_rot toma el directorio base y crea una carpetia media:
 MEDIA_ROOT = BASE_DIR / "media"
-
 
 MEDIA_URL = "/public/"
 
