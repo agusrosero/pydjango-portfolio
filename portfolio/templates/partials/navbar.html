@@ -10,9 +10,15 @@
       <li class="nav-item">
         <a class="nav-link link-danger" href="/mi_blog">Posts</a>
       </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link link-danger" href="/logout">Logout</a>
+      </li>
+      {% else %}
       <li class="nav-item">
         <a class="nav-link link-danger" href="/login">Login</a>
       </li>
+      {% endif %}
       <li class="nav-item">
         <a href="/text_to_html" class="nav-link link-danger">Texto to Html</a>
       </li>
