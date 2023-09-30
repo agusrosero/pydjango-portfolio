@@ -5,7 +5,6 @@ from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
 
 
-# Create your views here.
 # Register
 def signup(request):
     if request.method == 'POST':
@@ -18,7 +17,7 @@ def signup(request):
 
             user = authenticate(username=user.username, password=raw_password)
             login(request, user)
-
+            messages.success(request, 'Registro exitoso.. Bienvenido')
             return redirect('/')
     else:
         form = SignUpForm()
@@ -42,14 +41,14 @@ def sign_in(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.success(request, 'Has iniciado sesión correctamente')
+                messages.success(request, 'Has iniciado sesión correctamente.')
                 return redirect('/')
             else:
-                messages.warning(request, 'Usuario o contraseña incorrectos')
+                messages.warning(request, 'Usuario o contraseña incorrectos.')
         return render(request, 'users/login.html', {'form': form})
 
 # Logout
 def sign_out(request):
     logout(request)
-    messages.info(request, 'Has cerrado sesión correctamente')
+    messages.info(request, 'Has cerrado sesión correctamente.')
     return redirect('login')
