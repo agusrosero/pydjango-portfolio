@@ -8,6 +8,8 @@
 python3 -m venv venv
 ```
 
+For windows create enviorment with **python -m venv venv** or **python -m virtualenv venv**
+
 ### Active enviorment
 
 To active our venv on Windows:
@@ -56,8 +58,8 @@ python3 manage.py runserver
 ## ✅ Used technology
 
 - Python
-    - Django
+  - Django
 - CSS/HTML
-    - Bootstrap
+  - Bootstrap
 
 | [Twitter](https://twitter.com/hernagusdev) - Twitter | [Linkedin](https://www.linkedin.com/in/hernan-rosero/) - Linkedin |
