@@ -55,7 +55,7 @@ python3 manage.py runserver
 
 ![home2](https://user-images.githubusercontent.com/103611875/223207629-bd15a846-0675-4f6b-b5d2-5242aa02ffcf.png)
 
-## ✅ Used technology
+## Used technology
 
 - Python
   - Django
