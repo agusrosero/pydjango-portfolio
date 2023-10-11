@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
@@ -8,7 +8,6 @@
         <section class="w-100 p-4 d-flex justify-content-center pb-4">
             <div class="form-group mb-3 py-4">
                 {% csrf_token %}
-                <!-- {{ form.as_p }} -->
                 <div class="form-outline mb-4">
                     <input type="username" placeholder="Username" name="username" required class="form-control">
                 </div>
@@ -17,7 +16,7 @@
                 </div>
                 <a href="/signup">Register</a>
                 <br>
-                <input type="submit" class="btn btn-primary mt-4" value="Send">
+                <input type="submit" class="btn btn-primary mt-4" value="Login">
             </div>
         </section>
     </form>
