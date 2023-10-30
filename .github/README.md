@@ -8,8 +8,6 @@
 python3 -m venv venv
 ```
 
-For windows create enviorment with **python -m venv venv** or **python -m virtualenv venv**
-
 ### Active enviorment
 
 To active our venv on Windows:
