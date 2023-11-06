@@ -3,7 +3,6 @@ from django.db.models.fields import CharField, URLField
 from django.db.models.fields.files import ImageField
 
 
-# Creamos nuestro modelo de datos
 class Proyect(models.Model):
     
     titulo = CharField(max_length=100)
