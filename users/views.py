@@ -1,29 +1,27 @@
-from django.shortcuts import render, redirect
-from .forms import LoginForm
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
-from .forms import SignUpForm
+from django.urls import reverse
+from .forms import LoginForm, SignUpForm
 
 
-# Register
+@login_required
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save()
-            user.refresh_from_db()
-            user.save()
             raw_password = form.cleaned_data.get('password1')
 
             user = authenticate(username=user.username, password=raw_password)
             login(request, user)
-            messages.success(request, 'Registro exitoso.. Bienvenido')
+            messages.success(request, 'Registro exitoso. Bienvenido.')
             return redirect('/')
     else:
         form = SignUpForm()
     return render(request, 'users/signup.html', {'form': form})
 
-# Login
 def sign_in(request):
     if request.method == 'GET':
         if request.user.is_authenticated:
@@ -47,8 +45,8 @@ def sign_in(request):
                 messages.warning(request, 'Usuario o contraseña incorrectos.')
         return render(request, 'users/login.html', {'form': form})
 
-# Logout
+@login_required
 def sign_out(request):
     logout(request)
     messages.info(request, 'Has cerrado sesión correctamente.')
-    return redirect('login')
+    return redirect(reverse('login'))
