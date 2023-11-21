@@ -3,5 +3,9 @@ from .models import Proyect
 
 
 def home(request):
-    proyects = Proyect.objects.all()
-    return render(request, "home.html", {"proyects": proyects})
+    try:
+        projects = Proyect.objects.all()
+    except Proyect.DoesNotExist:
+        projects = []
+    
+    return render(request, "home.html", {"projects": projects})
