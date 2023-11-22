@@ -1,25 +1,33 @@
-{% extends 'base.html' %}
-{% block content %}
-{% load static %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 
 <header class="row bg-black">
   <div class="col-md-4">
-    <img src="{% static 'portfolio/yo.jpeg' %}" alt="" class="img-fluid rounded" />
+    <img
+      src="{% static 'portfolio/yo.jpeg' %}"
+      alt=""
+      class="img-fluid rounded"
+    />
   </div>
 
   <div class="col-md-8 my-auto">
     <h1 class="display-5">Mi nombre es <strong>Hernan</strong></h1>
     <h3>Soy Desarrollador Backend</h3>
     <p>
-      Soy un apasionado de la tecnología y la programación, me gusta todo lo que es desarrollar código, probar, depurar,
-      mantener, modificar y resolver problemas. Tengo 22 años de edad y una fuerte motivación por seguir aprendiendo y
-      capacitándome constantemente. Mi pasión por la tecnología me impulsa a mantenerme actualizado sobre las últimas
-      tendencias y herramientas, estoy constantemente buscando nuevas oportunidades para mejorar mis habilidades y
-      conocimientos.
-      Cuento con +1 año de experiencia en: Python, Django, Flask, Tkinter, HTML, CSS, Git, Github, SQL(MySQL,
+      Soy un apasionado de la tecnología y la programación, me gusta todo lo que
+      es desarrollar código, probar, depurar, mantener, modificar y resolver
+      problemas. Tengo 22 años de edad y una fuerte motivación por seguir
+      aprendiendo y capacitándome constantemente. Mi pasión por la tecnología me
+      impulsa a mantenerme actualizado sobre las últimas tendencias y
+      herramientas, estoy constantemente buscando nuevas oportunidades para
+      mejorar mis habilidades y conocimientos. Cuento con +1 año de experiencia
+      en: Python, Django, Flask, NodeJS, HTML, Git, Github, SQL(MySQL,
       PostgreSQL) y Linux.
     </p>
-    <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-danger btn-lg rounded-0 my-3">Descargar CV</a>
+    <a
+      href="{% static 'portfolio/cv.pdf' %}"
+      class="btn btn-danger btn-lg rounded-0 my-3"
+      >Descargar CV</a
+    >
   </div>
 </header>
 
@@ -30,17 +38,25 @@
   {% for proyect in proyects %}
   <div class="col-md-4 p-4">
     <div class="card bg-black card-project">
-      <img src="{{proyect.image.url}}" alt="{{proyect.titulo}}" class="card-img-top" />
+      <img
+        src="{{proyect.image.url}}"
+        alt="{{proyect.titulo}}"
+        class="card-img-top"
+      />
       <div class="card-body">
         <h2>{{proyect.titulo}}</h2>
         <p>{{proyect.descripcion}}</p>
 
         {% if proyect.url %}
-        <a href="{{proyect.url}}" class="btn btn-primary rounded-0 btn-sm" target="_blank">{{proyect.url}}</a>
+        <a
+          href="{{proyect.url}}"
+          class="btn btn-primary rounded-0 btn-sm"
+          target="_blank"
+          >{{proyect.url}}</a
+        >
         {% endif %}
       </div>
     </div>
   </div>
-  {% endfor %}
-  {% endblock %}
+  {% endfor %} {% endblock %}
 </div>

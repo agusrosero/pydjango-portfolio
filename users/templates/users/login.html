@@ -1,26 +1,35 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container text-center">
-    <div class="display-3"><span>Login</span></div>
-    <form name="LoginForm" action="{% url 'login' %}" method="post">
-        <section class="w-100 p-4 d-flex justify-content-center pb-4">
-            <div class="form-group mb-3 py-4">
-                {% csrf_token %}
-                <div class="form-outline mb-4">
-                    <input type="username" placeholder="Username" name="username" required class="form-control">
-                </div>
-                <div class="form-outline mb-4">
-                    <input type="password" placeholder="Password" name="password" required class="form-control">
-                </div>
-                <a href="/signup">Register</a>
-                <br>
-                <input type="submit" class="btn btn-primary mt-4" value="Login">
-            </div>
-        </section>
-    </form>
+  <div class="display-3"><span>Login</span></div>
+  <form name="LoginForm" action="{% url 'login' %}" method="post">
+    <section class="w-100 p-4 d-flex justify-content-center pb-4">
+      <div class="form-group mb-3 py-4">
+        {% csrf_token %}
+        <div class="form-outline mb-4">
+          <input
+            type="username"
+            placeholder="Username"
+            name="username"
+            required
+            class="form-control"
+          />
+        </div>
+        <div class="form-outline mb-4">
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+            class="form-control"
+          />
+        </div>
+        <a href="/register">Register</a>
+        <br />
+        <input type="submit" class="btn btn-primary mt-4" value="Login" />
+      </div>
+    </section>
+  </form>
 </div>
-
 
 {% endblock %}

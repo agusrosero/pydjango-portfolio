@@ -6,6 +6,23 @@ from django.urls import reverse
 from .forms import LoginForm, SignUpForm
 
 
+# Register view
+def register(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+
+            raw_password = form.cleaned_data.get('password1')
+
+            user = authenticate(username=user.username, password=raw_password)
+            login(request, user)
+            messages.success(request, 'Registro exitoso. Bienvenido.')
+            return redirect('/')
+    else:
+        form = SignUpForm()
+    return render(request, 'users/register.html', {'form': form})
+
 @login_required
 def signup(request):
     if request.method == 'POST':
