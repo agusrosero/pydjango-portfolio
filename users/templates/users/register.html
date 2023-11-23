@@ -1,16 +1,34 @@
-<!-- FILEPATH: /mnt/d037ce5d-76ba-4a6a-b255-e0bbf02cc6ab/home/agus-dev/Documentos/PROYECTOS/Portfolio/pydjango-portfolio/users/templates/users/register.html -->
-
 {% extends 'base.html' %} {% block content %}
+
 <h1>Register</h1>
+
 <form method="POST" action="{% url 'register' %}">
   {% csrf_token %}
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="username" required /><br /><br />
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required /><br /><br />
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" required /><br /><br />
-  <input type="submit" value="Register" />
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      class="form-control"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" class="form-control" required />
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      class="form-control"
+      required
+    />
+  </div>
+  <input type="submit" value="Register" class="btn btn-primary" />
 </form>
 
 {% endblock %}
