@@ -23,6 +23,7 @@ def register(request):
         form = SignUpForm()
     return render(request, 'users/register.html', {'form': form})
 
+# Login
 def sign_in(request):
     if request.method == 'GET':
         if request.user.is_authenticated:
@@ -46,6 +47,7 @@ def sign_in(request):
                 messages.warning(request, 'Usuario o contraseña incorrectos.')
         return render(request, 'users/login.html', {'form': form})
 
+# Logout
 @login_required
 def sign_out(request):
     logout(request)
