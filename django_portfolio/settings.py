@@ -40,9 +40,6 @@ INSTALLED_APPS = [
     "mi_blog",
     "portfolio",
     "users",
-    "text_to_html",
-    # ckeditor para el text_to_html
-    "ckeditor",
 ]
 
 MIDDLEWARE = [

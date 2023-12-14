@@ -6,6 +6,10 @@ __pycache__
 db.sqlite3
 media
 
+# Virtual environment
+.venv
+venv
+
 # Backup files # 
 *.bak 
 
